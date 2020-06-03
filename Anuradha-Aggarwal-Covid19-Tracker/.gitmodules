@@ -1,0 +1,4 @@
+[submodule "Anuradha-Aggarwal-Covid19-Tracker/Covid19-Tracker"]
+	path = Anuradha-Aggarwal-Covid19-Tracker/Covid19-Tracker
+	url = https://github.com/anuradha9712/Covid19-Tracker
+	branch = master
