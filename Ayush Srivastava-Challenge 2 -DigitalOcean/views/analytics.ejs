@@ -1,0 +1,343 @@
+<%-include("partials/header") -%>
+<div class="container-fluid">
+
+
+<div class="row">
+  <div class="col-lg-4">
+    <section>
+      <canvas id="totalConfirmedCases" style="width:200px;height:200px"></canvas>
+    </section>
+
+
+    </div>
+    <div class="col-lg-4">
+      <section>
+        <canvas id="totalRecovered" style="width:200px;height:200px"></canvas>
+      </section>
+
+
+      </div>
+      <div class="col-lg-4">
+        <section>
+          <canvas id="totalDeceased" style="width:200px;height:200px"></canvas>
+        </section>
+
+
+        </div>
+
+    <div class="col-lg-4">
+      <section>
+        <canvas id="test" style="width:200px;height:200px"></canvas>
+      </section>
+    </div>
+
+      <div class="col-lg-4">
+        <section>
+          <canvas id="Zones" style="width:200px;height:200px"></canvas>
+        </section>
+</div>
+<div class="col-lg-4">
+  <section>
+    <canvas id="genderRatio" style="width:200px;height:200px"></canvas>
+  </section>
+</div>
+
+</div>
+
+
+
+
+
+  <script>
+function totalConfirmed(){
+var ctx = document.getElementById('totalConfirmedCases').getContext('2d');
+var myChart = new Chart(ctx, {
+
+    type: 'line',
+    data:{
+      responsive: true,
+
+      labels:[<%=dailyDate%>],
+        datasets: [{
+            label: 'Daily Confirmed Cases / Day',
+
+            data: [<%=dailyCnf%>],
+            fill:false,
+            backgroundColor: [
+                "red"
+            ],
+            borderColor: [
+               "red"
+            ],
+            pointRadius:1,
+            borderWidth: 2,
+            pointBorderColor:"red",
+          pointBackgroundColor:"red",
+
+        }]
+    },
+    options: {
+      scales: {
+          yAxes: [{
+          display: true,
+          scaleLabel: {
+            display: true,
+            labelString: 'Total Confirmed Cases'
+          }
+        }],
+            xAxes: [{
+						display: true,
+						scaleLabel: {
+							display: true,
+							labelString: 'Days'
+						}
+					}],
+        },
+        title: {
+            display: true,
+            position:'bottom',
+            text: 'Total Confirmed cases vs Days(Starting from day 1 i.e 30th Jan)',
+            fontColor:'#666'
+        }
+    }
+});
+}
+function totalRecovered(){
+var ctx = document.getElementById('totalRecovered').getContext('2d');
+var myChart = new Chart(ctx, {
+
+    type: 'line',
+    data:{
+      labels:[<%=dailyDate%>],
+        datasets: [{
+            label: 'Total Recovered/Day',
+
+            data: [<%=dailyCnf%>],
+            fill:false,
+            backgroundColor: [
+                "blue"
+            ],
+            borderColor: [
+               "blue"
+            ],
+            pointRadius:1,
+            borderWidth: 2,
+            pointBorderColor:"blue",
+          pointBackgroundColor:"blue",
+
+        }]
+    },
+    options: {
+        scales: {
+          yAxes: [{
+          display: true,
+          scaleLabel: {
+            display: true,
+            labelString: 'Total Recovered'
+          }
+        }],
+            xAxes: [{
+						display: true,
+						scaleLabel: {
+							display: true,
+							labelString: 'Days'
+						}
+					}],
+        },
+        title: {
+            display: true,
+            position:'bottom',
+            text: 'Total Recovered vs Days(Starting from day 1 i.e 30th Jan)',
+            fontColor:'#666'
+        }
+    }
+});
+}
+
+function totalDeceased(){
+var ctx = document.getElementById('totalDeceased').getContext('2d');
+var myChart = new Chart(ctx, {
+
+    type: 'line',
+    data:{
+      labels:[<%=dailyDate%>],
+        datasets: [{
+            label: 'Daily Deceased',
+
+            data: [<%=dailyDecsd%>],
+            fill:false,
+            backgroundColor: [
+                "grey"
+            ],
+            borderColor: [
+               "grey"
+            ],
+            pointRadius:1,
+            borderWidth: 2,
+            pointBorderColor:"grey",
+          pointBackgroundColor:"grey",
+
+        }]
+    },
+    options: {
+        scales: {
+          yAxes: [{
+          display: true,
+          scaleLabel: {
+            display: true,
+            labelString: 'Total Deceased'
+          }
+        }],
+            xAxes: [{
+						display: true,
+						scaleLabel: {
+							display: true,
+							labelString: 'Days'
+						}
+					}],
+        },
+        title: {
+            display: true,
+            position:'bottom',
+            text: 'Total Deceased vs Days(Starting from day 1 i.e 30th Jan)',
+            fontColor:'#666'
+        }
+    }
+});
+}
+function zones(){
+var ctx = document.getElementById('Zones').getContext('2d');
+var myChart = new Chart(ctx, {
+
+    type: 'doughnut',
+    data:{
+      labels:["Red","Orange","Green"],
+        datasets: [{
+
+
+            data: ["<%=redZone%>","<%=orangeZone%>","<%=greenZone%>"],
+
+            backgroundColor: [
+                'rgba(242, 38, 19, 1)',
+                "rgba(243, 156, 18, 1)",
+                "#a8df65"
+            ],
+            borderColor: [
+               "#5b8c85",
+               "#5b8c85",
+               "#5b8c85"
+            ],
+           borderWidth: 4,
+         }]
+    },
+    options: {
+        title: {
+            display: true,
+            position:'bottom',
+            text: 'District divided by zones',
+            fontColor:'#666'
+        }
+    }
+});
+}
+function test(){
+var ctx = document.getElementById('test').getContext('2d');
+var myChart = new Chart(ctx, {
+
+    type: 'line',
+    data:{
+      labels:[<%=testByDate%>],
+        datasets: [{
+            label: 'Daily Deceased',
+
+            data: [<%=testPerMillion%>],
+            fill:false,
+            backgroundColor: [
+                "#6a8caf"
+            ],
+            borderColor: [
+               "#5b8c85"
+            ],
+            pointRadius:1,
+            borderWidth: 2,
+            borderRadius:3,
+            borderDash :[2],
+            pointBorderColor:"#6a8caf",
+          pointBackgroundColor:"#6a8caf",
+
+        }]
+    },
+    options: {
+        scales: {
+          yAxes: [{
+          display: true,
+          scaleLabel: {
+            display: true,
+            labelString: 'Tests Per Million'
+          }
+        }],
+            xAxes: [{
+						display: true,
+						scaleLabel: {
+							display: true,
+							labelString: 'Days'
+						}
+					}],
+        },
+        title: {
+            display: true,
+            position:'bottom',
+            text: 'Tests Done/Million vs Days(Starting from day 1 i.e 13th March)',
+            fontColor:''
+        }
+    }
+});
+}
+function genderRatio(){
+var ctx = document.getElementById('genderRatio').getContext('2d');
+var myChart = new Chart(ctx, {
+
+    type: 'doughnut',
+    data:{
+      labels:["Male","Female","Others"],
+        datasets: [{
+
+
+            data: ["<%=maleGenderCases%>","<%=femaleGenderCases%>","<%=otherGenderCases%>"],
+
+            backgroundColor: [
+                'rgba(44, 130, 201, 1)',
+                'rgb(255,105,180)',
+                'rgba(103, 128, 159, 1)'
+            ],
+            borderColor: [
+               "#000",
+               "#000",
+               "#000"
+            ],
+           borderWidth: 4,
+         }]
+    },
+    options: {
+        title: {
+            display: true,
+            position:'bottom',
+            text: 'Cases divided by Gender (from 24th May)',
+            fontColor:'#666'
+        }
+    }
+});
+}
+
+totalConfirmed();
+totalRecovered();
+totalDeceased();
+zones();
+test();
+genderRatio();
+</script>
+  </div>
+
+</div>
+
+<%-include("partials/footer")-%>
