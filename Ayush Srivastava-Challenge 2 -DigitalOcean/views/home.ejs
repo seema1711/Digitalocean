@@ -1,0 +1,256 @@
+<%-include("partials/header")-%>
+
+<div class="container covid">
+  <div class="boxImg">
+
+
+    <img src="images/covid.png " alt="covid.png">
+    <h5>(INDIAN REGION)</h5>
+    <div class="dateBox">
+      <p><%=date%></p>
+    </div>
+  </div>
+</div>
+<div class="container-fluid">
+
+
+
+
+  <div class="box">
+    <div class="table-responsive">
+
+      <table class="table ">
+
+        <thead>
+          <tr>
+            <th scope="col">
+
+              <a href="#">
+                <h5 class="text-danger">Confirmed</h5>
+              </a>
+            </th>
+            <th scope="col">
+              <a href="#">
+                <h5 class="text-primary">Active</h5>
+              </a>
+            </th>
+            <th scope="col ">
+
+              <a href="#">
+                <h5 class="text-success">Recovered</h5>
+              </a>
+            </th>
+            <th scope="col">
+              <a href="#">
+                <h5 class="text-secondary">Deceased</h5>
+              </a>
+            </th>
+          </tr>
+        <tbody>
+          <tr>
+            <td class="text-danger delta">[+<%=deltaConfirmed%>]</td>
+            <td class="text-primary delta"></td>
+            <td class="text-success delta">[+<%=deltaRecovered%>]</td>
+            <td class="text-secondary delta">[+<%=deltaDeceased%>]</td>
+          </tr>
+        </tbody>
+        <tbody>
+          <tr>
+            <td class="text-danger"><%=confirmed%></td>
+            <td class="text-primary"><%=active%></td>
+            <td class="text-success"><%=recovered%></td>
+            <td class="text-secondary"><%=deceased%></td>
+          </tr>
+        </tbody>
+        </thead>
+
+      </table>
+    </div>
+  </div>
+  <div class="boxLastUpdated">
+
+    <p class="text-white">Last Updated:-<%=lastUpdated%></p>
+  </div>
+
+  <div class="row">
+
+    <div class="col-lg-6">
+
+      <div class="table-responsive">
+
+        <table class="table column1">
+          <div class="container">
+            <thead>
+              <tr class="fixed">
+                <td scope="col">
+
+                  <h5 class="text-warning">States</h5>
+                </td>
+                <th scope="col">
+                  <h5 class="text-danger">Confirmed</h5>
+                </th>
+                <th scope="col">
+                  <h5 class="text-primary">Active</h5>
+                </th>
+                <th scope="col ">
+                  <h5 class="text-success">Recovered</h5>
+                </th>
+                <th scope="col">
+                  <h5 class="text-secondary">Deceased</h5>
+                </th>
+              </tr>
+              <%for(let i=1;i<covidData.statewise.length;i++){%>
+
+              <tbody>
+                <tr>
+                  <td class="text-primary delta"></td>
+                  <td class="text-danger delta">[+<%=covidData.statewise[i].deltaconfirmed%>]</td>
+                  <td class="text-primary delta"></td>
+                  <td class="text-success delta">[+<%=covidData.statewise[i].deltarecovered%>]</td>
+                  <td class="text-secondary delta">[+<%=covidData.statewise[i].deltadeaths%>]</td>
+                </tr>
+              </tbody>
+            <tbody>
+
+
+
+              <tr>
+                <td scope="row"><%=covidData.statewise[i].state%></td>
+                <td><%=covidData.statewise[i].confirmed%></td>
+                <td><%=covidData.statewise[i].active%></td>
+                <td><%=covidData.statewise[i].recovered%></td>
+                <td><%=covidData.statewise[i].deaths%></td>
+              </tr>
+              <% }%>
+            </tbody>
+            </thead>
+          </div>
+        </table>
+      </div>
+    </div>
+    <div class="col-lg-6">
+
+        <div class="box" style="width:300px; height: 80vh" id="mapContainer">  </div>
+       <div class="container-fluid">
+
+
+        <div class="row-lg-6">
+          <section>
+            <canvas id="totalConfirmedCases" style="width:350px;height:350px"></canvas>
+          </section>
+          <p style="text-align:right;"><a href="/analytics">.....more analytical data</a></p>
+</div>
+ </div>
+      </div>
+    </div>
+    </div>
+
+
+
+
+
+  <script type="text/javascript">
+   const mymap = L.map('mapContainer').setView([20.5937, 78.9629] ,4);
+    const mapBoxToken ="pk.eyJ1IjoiZ3pzbm93MTUiLCJhIjoiY2thc3Zlb3BvMTE0NjJ0bnJmZzdxcThidiJ9.AFyJnZ1uJPhHIw_QDKyEZw";
+    console.log(mapBoxToken)
+    L.tileLayer('https://api.mapbox.com/styles/v1/mapbox/dark-v10/tiles/{z}/{x}/{y}?access_token={accessToken}', {
+    attribution: 'Map data &copy; <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+    maxZoom: 4.5,
+    id: 'mapbox/streets-v11',
+    tileSize: 512,
+    zoomOffset: -1,
+    accessToken: mapBoxToken
+}).addTo(mymap);
+var marker = L.marker([20.5937, 78.9629]).addTo(mymap);
+marker.bindPopup("<b>COVID-19 Cnf Cases:-</b><br><%=confirmed%>");
+
+function totalConfirmed(){
+var ctx = document.getElementById('totalConfirmedCases').getContext('2d');
+var myChart = new Chart(ctx, {
+
+    type: 'line',
+    data:{
+      responsive: true,
+
+      labels:[<%=dailyDate%>],
+        datasets: [{
+            label: 'TotalConfirmed Cases / Day',
+
+            data: [<%=dailyCnf%>],
+            fill:false,
+            backgroundColor: [
+                "red",
+            ],
+            borderColor: [
+               "red"
+            ],
+            pointRadius:1,
+            borderWidth: 2,
+            pointBorderColor:"red",
+          pointBackgroundColor:"red",
+
+        },
+        {
+            label: 'Total Recovered Cases / Day',
+
+            data: [<%=dailyRcvd%>],
+            fill:false,
+            backgroundColor: [
+                "blue",
+            ],
+            borderColor: [
+               "blue"
+            ],
+            pointRadius:1,
+            borderWidth: 2,
+            pointBorderColor:"blue",
+          pointBackgroundColor:"blue",
+
+        },
+        {
+            label: 'Total Deceased Cases / Day',
+
+            data: [<%=dailyDecsd%>],
+            fill:false,
+            backgroundColor: [
+                "grey",
+            ],
+            borderColor: [
+               "grey"
+            ],
+            pointRadius:1,
+            borderWidth: 2,
+            pointBorderColor:"grey",
+          pointBackgroundColor:"grey",
+
+        }]
+    },
+    options: {
+      scales: {
+          yAxes: [{
+          display: true,
+          scaleLabel: {
+            display: true,
+            labelString: 'Total Confirmed Cases'
+          }
+        }],
+            xAxes: [{
+						display: true,
+						scaleLabel: {
+							display: true,
+							labelString: 'Days'
+						}
+					}],
+        },
+        title: {
+            display: true,
+            position:'bottom',
+            text: 'Total Confirmed cases vs Days(Starting from day 1 i.e 30th Jan)',
+            fontColor:'#666'
+        }
+    }
+});
+}
+totalConfirmed();
+</script>
+<%- include("partials/footer")-%>

@@ -1,0 +1,164 @@
+body {
+  color: #edf4f2;
+  background-color: #161625;
+  justify-content: center;
+  min-height: 100vh;
+  position: relative;
+  font-family:'Ubuntu Mono', monospace;
+
+}
+
+
+
+
+tbody {
+  border-style: hidden;
+
+}
+.navbar-brand {
+  font-size: 42px;
+  text-align: center;
+  font-family: 'Chelsea Market','cursive';
+  letter-spacing: 1px;
+  color: #f7f7f7;
+}
+
+.navbar {
+  background-color: #1e1e30;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  border: 0;
+  margin-bottom: 0;
+  font-size: 20px;
+  letter-spacing: 1px;
+  font-family: 'Chelsea Market','cursive';
+  color: #edf4f2;
+  border-radius: 12px;
+  /* background: #161625; */
+  box-shadow:  5px 5px 10px #0f0f19,-5px -5px 10px #1d1d31;
+
+}
+.nav-item{
+  padding :0 20px 0 20px;
+
+}
+
+.navbar-nav  li a:hover {
+  color: #ff5200 !important;
+}
+
+.box {
+  max-width: 720px;
+  margin: auto;
+  border-radius: 20px;
+border-radius: 26px;
+background: #161625;
+box-shadow:  5px 5px 10px #0f0f19, -5px -5px 10px #1d1d31;
+}
+.boxLastUpdated{
+  max-width: 200px;
+  margin: auto;
+  background: #1e1e30;
+  border-radius: 10px;
+
+  box-shadow:  5px 5px 10px #0f0f19,-5px -5px 10px #1d1d31;
+color: black;
+text-align: center;
+margin-top: 50px;
+margin-bottom: 50px;
+}
+.boxImg{
+  max-width: 650px;
+  margin: auto;
+  background: #1e1e30;
+  border-radius: 20px;
+
+
+  box-shadow:  5px 5px 10px #0f0f19,-5px -5px 10px #1d1d31;
+  justify-content: center;
+  text-align: center;
+margin-top: 3rem;
+margin-bottom: 1rem;
+padding: 10px 0 5px 0;
+}
+.delta{
+  font-size: 12px;
+}
+
+
+.container {
+  padding-top: 50px;
+  text-align: center;
+}
+
+.covid {
+  padding-top: 50px;
+  padding-bottom: 50px;
+  color: white;
+}
+
+.table {
+  text-align: center;
+  border-style: hidden;
+  padding-top: 10%;
+  color: #68b39e;
+
+}
+
+
+.footer {
+  position: absolute;
+  text-align: center;
+  width: 100%;
+  bottom: 0;
+  height: 60px;
+  padding-top: 1rem;
+  padding-bottom: 6rem;
+  border-radius: 8px;
+    background-color: #1e1e30;
+  box-shadow:  5px 5px 0px #09090f, -5px -5px 0px #23233b;
+
+}
+.copyright{
+  padding-top: 3px;
+}
+.icon{
+font-size: 2.5rem;
+color: black;
+padding-bottom: 8px;
+}
+.icon:hover{
+  color:#11999E;
+}
+
+.table td, .table th {
+  padding: .75rem;
+  border-style: hidden;
+  overflow-y: visible;
+
+}
+.col-lg-6 .col-lg-4{
+  padding-bottom: 8rem;
+}
+#mapContainer{
+  justify-content: center;
+  position: relative;
+  padding: 200px;
+  margin: auto;
+  margin-bottom:  10%;
+  margin-top: 15%;
+  padding-left: 30px;
+
+}
+.row{
+  margin: auto;
+  padding-bottom: 8rem;
+
+}
+section{
+  justify-content:center;
+  margin: auto;
+  width:350px;
+  height:400px;
+  padding-top:50px;
+}
