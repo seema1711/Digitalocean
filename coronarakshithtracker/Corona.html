@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    />
+
+    <!-- Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+    <!-- Font Awesome -->
+    <script
+      src="https://kit.fontawesome.com/996973c893.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Baloo+Thambi+2:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- My Stylesheet -->
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- My jQuery -->
+    <script src="main.js"></script>
+
+    <!-- Chart.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+
+    <title>www.covid-19Data.com</title>
+  </head>
+  <body>
+  <header>
+        <div class="logo">
+            <img src="logo1.png" alt="">
+            <p>COVID-19<br/>STATS</p>
+        </div>
+  <div class="container">
+	<div class="main">
+		<div class="logo">
+		<img src="">
+		</div>
+		<ul>
+		   <li class="active"><a href="https://www.mygov.in/covid-19/">HOME</a></li>
+		<li><a href="https://www.who.int/emergencies/diseases/novel-coronavirus-2019/technical-guidance/infection-prevention-and-control">PRECAUTIONS</a></li>
+		<li><a href="https://youtu.be/mOV1aBVYKGA">ABOUT COVID-19</a></li>
+		<li><a href="https://the2019ncov.com/">ANALYTICS</a></li>
+		<li><a href="https://drive.google.com/file/d/11uH8Sbe2OMLMkVbz8pEfQKSlcRjk7SUl/view?usp=sharing">ABOUT</a></li>
+		</ul>
+		</div>
+		<div class="button">
+			<a href="https://youtu.be/v-852f1PXBo" class="btn">WATCH VIDEO</a>
+			<a href="https://www.un.org/development/desa/dspd/everyone-included-covid-19.html" class="btn">LEARN MORE ON COVID-19</a>
+			
+			</div>
+			<button onclick="alert('STAY SAFE, STAY ALERT!')">Click me!</button>
+    <div class="container-fluid  p-5 text-center my-3">
+      <h1 class="">COVID-19 TRACKER INDIA</h1>
+      <h5 class="text-muted">
+        Tracking The Covid-19 Cases In India
+      </h5>
+    </div>
+
+    <div class="container my-5">
+      <div class="row text-center">
+        <div class="col-3 text-warning">
+          <h5>Confirmed</h5>
+          <p id="confirmed"></p>
+        </div>
+        <div class="col-3 text-info">
+          <h5>Active</h5>
+          <p id="active"></p>
+        </div>
+        <div class="col-3 text-success">
+          <h5>Recovered</h5>
+          <p id="recovered"></p>
+        </div>
+        <div class="col-3 text-danger">
+          <h5>Deceased</h5>
+          <p id="deaths"></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="container p-3 my-5 text-center">
+      <h4 class="text-info">"Carefulness costs you Nothing."</h4>
+      <p class="text-muted">Safety isn't Expensive,its Priceless  .</p>
+    </div>
+
+    <canvas id="myChart"></canvas>
+
+    <div class="container text-center my-5">
+      <h6 class="text-info">
+        *Click on the Confirmed/Recovered/Deaths buttons above to see the chart
+        individually.*
+      </h6>
+    </div>
+          <footer>
+        <div class="footer-container">
+            <div class="copyright">
+                <p>MADE FOR INDIA 🇮🇳© 2020 </p>
+            </div>
+        </div>
+    </footer>
+    
+  </body>
+</html>
