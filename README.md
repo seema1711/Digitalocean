@@ -1,18 +1,9 @@
 # Digitalocean
 This is a hackathon by IncubateIND and sponsered by Digital Ocean named Cloud Titans.  
 This repository consists of all the projects under "DeCOVID".
-Project Mentor- Seema Saharan
-[[params.social]]
-    icon = "linkedin"
-    icon_pack = "fa"
-    link = "//linkedin.com/in/seema-saharan-372473167/"
+Project Mentor- Seema Saharan  
+[![Linkedin](https://i.stack.imgur.com/gVE0j.png) LinkedIn](https://www.linkedin.com/in/seema-saharan-372473167/)
+&nbsp;  
+[![GitHub](https://i.stack.imgur.com/tskMh.png) GitHub](https://github.com/seema1711)  
+[![Twitter](https://img.shields.io/twitter/url/https/twitter.com/cloudposse.svg?style=social&label=Follow%20%40SeemaSaharan)](https://twitter.com/SeemaSaharan5)  
 
- [[params.social]]
-    icon = "github"
-    icon_pack = "fa"
-    link = "//github.com/seema1711"
-
- [[params.social]]
-    icon = "twitter"
-    icon_pack = "fa"
-    link = "//twitter.com/SeemaSaharan5"
