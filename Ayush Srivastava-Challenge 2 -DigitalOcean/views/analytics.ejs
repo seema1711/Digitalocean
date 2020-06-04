@@ -57,7 +57,7 @@ var myChart = new Chart(ctx, {
     data:{
       responsive: true,
 
-      labels:[<%=dailyDate%>],
+      labels:<%-JSON.stringify(dailyDate)%>,
         datasets: [{
             label: 'Daily Confirmed Cases / Day',
 
@@ -108,7 +108,7 @@ var myChart = new Chart(ctx, {
 
     type: 'line',
     data:{
-      labels:[<%=dailyDate%>],
+      labels:<%-JSON.stringify(dailyDate)%>,
         datasets: [{
             label: 'Total Recovered/Day',
 
@@ -160,7 +160,7 @@ var myChart = new Chart(ctx, {
 
     type: 'line',
     data:{
-      labels:[<%=dailyDate%>],
+      labels:<%-JSON.stringify(dailyDate)%>,
         datasets: [{
             label: 'Daily Deceased',
 
@@ -223,9 +223,9 @@ var myChart = new Chart(ctx, {
                 "#a8df65"
             ],
             borderColor: [
-               "#5b8c85",
-               "#5b8c85",
-               "#5b8c85"
+               "#fff",
+               "#fff",
+               "#fff"
             ],
            borderWidth: 4,
          }]
@@ -248,7 +248,7 @@ var myChart = new Chart(ctx, {
     data:{
       labels:[<%=testByDate%>],
         datasets: [{
-            label: 'Daily Deceased',
+            label: 'Test/Million',
 
             data: [<%=testPerMillion%>],
             fill:false,

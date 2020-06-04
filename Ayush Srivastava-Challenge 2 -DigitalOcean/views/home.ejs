@@ -11,9 +11,11 @@
     </div>
   </div>
 </div>
-<div class="container-fluid">
 
 
+
+
+<div class="container">
 
 
   <div class="box">
@@ -56,10 +58,10 @@
         </tbody>
         <tbody>
           <tr>
-            <td class="text-danger"><%=confirmed%></td>
-            <td class="text-primary"><%=active%></td>
-            <td class="text-success"><%=recovered%></td>
-            <td class="text-secondary"><%=deceased%></td>
+            <td class="text-danger num"><%=confirmed%></td>
+            <td class="text-primary num"><%=active%></td>
+            <td class="text-success num"><%=recovered%></td>
+            <td class="text-secondary num"><%=deceased%></td>
           </tr>
         </tbody>
         </thead>
@@ -128,20 +130,119 @@
         </table>
       </div>
     </div>
+
     <div class="col-lg-6">
 
-        <div class="box" style="width:300px; height: 80vh" id="mapContainer">  </div>
-       <div class="container-fluid">
 
 
-        <div class="row-lg-6">
+
+
+        <div class="">
           <section>
             <canvas id="totalConfirmedCases" style="width:350px;height:350px"></canvas>
           </section>
-          <p style="text-align:right;"><a href="/analytics">.....more analytical data</a></p>
+          <p style="text-align:center; padding-bottom:50px;"><button class="btn btn-primary" type="button" name="button"><a style="color:#edf4f2;" href="/analytics">more</a></button></p>
 </div>
+
+ <div class="">
+   <h1 style="text-align:center; color :#edf4f2 ;padding:50px ">Global-Info</h1>
+   <div class="box">
+     <div class="table-responsive">
+
+       <table class="table ">
+
+         <thead>
+           <tr>
+             <th scope="col">
+
+               <a href="#">
+                 <h5 class="text-danger">Confirmed</h5>
+               </a>
+             </th>
+
+             <th scope="col ">
+
+               <a href="#">
+                 <h5 class="text-success">Recovered</h5>
+               </a>
+             </th>
+             <th scope="col">
+               <a href="#">
+                 <h5 class="text-secondary">Deceased</h5>
+               </a>
+             </th>
+           </tr>
+        <tbody>
+           <tr>
+             <td class="text-danger num"><%=globalConfirmed%></td>
+             <td class="text-success num"><%=globalRecovered%></td>
+             <td class="text-secondary num"><%=globalDeaths%></td>
+           </tr>
+         </tbody>
+         </thead>
+
+       </table>
+     </div>
+   </div>
  </div>
+ <div class="">
+   <section>
+     <canvas id="global" style="width:350px;height:350px"></canvas>
+   </section>
+  </div>
+  <div class="" style="padding:40px;">
+    <div class="box">
+      <div class="table-responsive">
+
+        <table class="table ">
+
+          <thead>
+            <tr>
+              <th scope="col">
+
+                <a href="#">
+                  <h5 class="text-danger">Newly-Confirmed</h5>
+                </a>
+              </th>
+
+              <th scope="col ">
+
+                <a href="#">
+                  <h5 class="text-success">Newly-Recovered</h5>
+                </a>
+              </th>
+              <th scope="col">
+                <a href="#">
+                  <h5 class="text-secondary">Newly-Deceased</h5>
+                </a>
+              </th>
+            </tr>
+         <tbody>
+            <tr>
+              <td class="text-danger num"><%=newConfirmed%></td>
+              <td class="text-success num"><%=newRecovered%></td>
+              <td class="text-secondary num"><%=newDeaths%></td>
+            </tr>
+          </tbody>
+          </thead>
+
+        </table>
       </div>
+    </div>
+
+  </div>
+  <div class="">
+    <div class="">
+      <section>
+        <canvas id="Newglobal" style="width:350px;height:350px"></canvas>
+      </section>
+     </div>
+  </div>
+  <div class="box" style="width:300px; height: 80vh" id="mapContainer">  </div>
+  <button class="btn btn-primary"  type="button" name="button"><a style="  color: #edf4f282;" href="/aboutCOVID">More COVID-19</a></button>
+  <h1 ><button class="btn btn-primary"  type="button" name="button"><a style="  color: #edf4f282;" href="/about">More About This WebSite</a></button></h1>
+  </div>
+
     </div>
     </div>
 
@@ -172,7 +273,7 @@ var myChart = new Chart(ctx, {
     data:{
       responsive: true,
 
-      labels:[<%=dailyDate%>],
+      labels:<%-JSON.stringify(dailyDate)%>,
         datasets: [{
             label: 'TotalConfirmed Cases / Day',
 
@@ -251,6 +352,71 @@ var myChart = new Chart(ctx, {
     }
 });
 }
+function global(){
+var ctx = document.getElementById('global').getContext('2d');
+var myChart = new Chart(ctx, {
+
+    type: 'doughnut',
+    data:{
+      labels:["Red","Orange","Green"],
+        datasets: [{
+
+
+            data: [<%=globalConfirmed%>,<%=globalRecovered%>,<%=globalDeaths%>],
+
+            backgroundColor: [
+                '#d92027',
+                "#99b898",
+                "#3797a4"
+            ],
+
+           borderWidth: 1,
+         }]
+    },
+    options: {
+        title: {
+            display: true,
+            position:'bottom',
+            text: 'Graphically Represented Global COVID-19 data',
+            fontColor:'#666'
+        }
+    }
+});
+}
+function newglobal(){
+var ctx = document.getElementById('Newglobal').getContext('2d');
+var myChart = new Chart(ctx, {
+
+    type: 'doughnut',
+    data:{
+      labels:["Red","Orange","Green"],
+        datasets: [{
+
+
+            data: [<%=newConfirmed%>,<%=newRecovered%>,<%=newDeaths%>],
+
+            backgroundColor: [
+                '#d92027',
+                "#99b898",
+                "#3797a4"
+            ],
+
+           borderWidth: 1,
+         }]
+    },
+    options: {
+        title: {
+            display: true,
+            position:'bottom',
+            text: 'Daily New Cases',
+            fontColor:'#666'
+        }
+    }
+});
+}
 totalConfirmed();
+global();
+newglobal();
+$(".num").counterUp({delay:10,time:1000});
 </script>
 <%- include("partials/footer")-%>
