@@ -25,10 +25,16 @@ let covidTest,
      testByDate=[];
 //variables for age bracket and male to female ratio
 let rawData,
-    agebracket,
     maleGenderCases=0,
     femaleGenderCases=0,
     otherGenderCases=0;
+    // variables for global covidData
+    let globalConfirmed,
+        globalDeaths,
+        globalRecovered,
+        newConfirmed,
+        newDeaths,
+        newRecovered;
 app.use(bodyParser.urlencoded({
   extended: true
 }));
@@ -46,7 +52,7 @@ const covidDataApi = axios.get(url1).then(function(response) {
   active = covidData.statewise[0].active;
   lastUpdated = covidData.statewise[0]['lastupdatedtime'];
   for (let i = 0; i < covidData.cases_time_series.length; i++) {
-    let day = (i + 1);
+    let day = covidData.cases_time_series[i].date;
     let cnf = covidData.cases_time_series[i].totalconfirmed;
     let rcvd = covidData.cases_time_series[i].totalrecovered;
     let decsd = covidData.cases_time_series[i].totaldeceased;
@@ -55,6 +61,7 @@ const covidDataApi = axios.get(url1).then(function(response) {
     dailyRcvd.push(rcvd);
     dailyDecsd.push(decsd);
   }
+
    covidTest =covidData.tested;
    for(let i=0;i<covidTest.length;i++){
   let date =i+1;
@@ -100,7 +107,18 @@ for(let i=31;i<rawData.length;i++){
 
 }
 
-})
+});
+axios.get("https://api.covid19api.com/summary").then(function(response){
+const globalData = response.data;
+globalConfirmed =globalData.Global.TotalConfirmed;
+globalRecovered=globalData.Global.TotalRecovered;
+globalDeaths=globalData.Global.TotalDeaths;
+newConfirmed=globalData.Global.NewConfirmed;
+newRecovered=globalData.Global.NewRecovered;
+newDeaths=globalData.Global.NewDeaths;
+});
+
+
 app.get("/", function(req, res) {
 
   res.render("home", {
@@ -118,6 +136,12 @@ app.get("/", function(req, res) {
     dailyCnf: dailyCnf,
     dailyRcvd: dailyRcvd,
     dailyDecsd: dailyDecsd,
+    globalConfirmed :globalConfirmed,
+    globalRecovered:globalRecovered,
+    globalDeaths:globalDeaths,
+    newConfirmed:newConfirmed,
+    newRecovered:newRecovered,
+    newDeaths:newDeaths
   });
 });
 app.get("/precaution", function(req, res) {
@@ -140,11 +164,13 @@ app.get("/analytics", function(req, res) {
     maleGenderCases:maleGenderCases,
     femaleGenderCases:femaleGenderCases,
     otherGenderCases:otherGenderCases
+
     });
 });
 app.get("/about", function(req, res) {
   res.render("about");
 });
-app.listen(process.env.PORT || 3000, function() {
-  console.log("Server is up and running at port 3000");
+
+app.listen(process.env.PORT || 5000, function() {
+  console.log("Server is up and running at port 5000");
 });

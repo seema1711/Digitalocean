@@ -1,8 +1,10 @@
 body {
-  color: #edf4f2;
+  color: #edf4f282;
   background-color: #161625;
   justify-content: center;
+
   min-height: 100vh;
+  min-width: 100vw;
   position: relative;
   font-family:'Ubuntu Mono', monospace;
 
@@ -89,6 +91,7 @@ padding: 10px 0 5px 0;
 .container {
   padding-top: 50px;
   text-align: center;
+
 }
 
 .covid {
@@ -107,12 +110,12 @@ padding: 10px 0 5px 0;
 
 
 .footer {
-  position: absolute;
+  position: relative;
   text-align: center;
-  width: 100%;
+  width: 100vw;
   bottom: 0;
   height: 60px;
-  padding-top: 1rem;
+  padding-top: .5rem;
   padding-bottom: 6rem;
   border-radius: 8px;
     background-color: #1e1e30;
@@ -150,9 +153,9 @@ padding-bottom: 8px;
   padding-left: 30px;
 
 }
-.row{
+.row .corona{
   margin: auto;
-  padding-bottom: 8rem;
+  /* padding-bottom: 8rem; */
 
 }
 section{
@@ -162,3 +165,40 @@ section{
   height:400px;
   padding-top:50px;
 }
+
+  .coronaVirusImg{
+    height: 200px;
+    width: 200px
+    padding:30px;
+   animation: rotation 20s infinite linear;
+  }
+  @keyframes rotation {
+    from {
+      transform: rotate(359deg);
+    }
+    to {
+      transform: rotate(0deg);
+    }
+  }
+  .subject {
+    padding:50px;
+
+  }
+  h3{
+    text-decoration: underline;
+    padding-bottom: 8px;
+    color:#ffffff;
+  }
+  h5{
+    padding-bottom: 8px;
+  }
+  .aboutCovid{
+    padding:5px
+  }
+ul{
+  text-align: left;
+}
+
+/* .Symptom{
+  font-size: 15px;
+} */
