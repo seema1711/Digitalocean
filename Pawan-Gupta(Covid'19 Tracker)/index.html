@@ -1,0 +1,591 @@
+<html>
+
+<head>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-161590291-1"></script>
+
+	<title>Covid-19 Report</title>
+
+  <meta charset="utf-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="popup.css" />
+  <link rel="stylesheet" type="text/css" href="protect.css" />
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" crossorigin="anonymous">
+
+
+
+
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"  crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"  crossorigin="anonymous"></script>
+
+
+
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+
+
+
+
+
+<!--script for bar graph-->
+
+
+
+<!----->
+
+
+</head>
+
+<body>
+
+
+<div class="step_for_cure" style="color:#ffffff;padding:10px;margin:0px">
+
+    	<h1 style="margin:10px">COVID-19 Tracker (India)</h1>
+
+    <!--poppup-->
+    <div class="box">
+        <a class="button" href="#popup1" id="bt" >Tips of the Day</a>
+    </div>
+</div>
+ <header style="background-color: #3366cc;color:white;padding-bottom: 10px">
+    <nav class="navbar navbar-expand-lg  py-3">
+        <div class="container"><div class="navbar-brand text-uppercase font-weight-bold ">Covid'19</div>
+            <button  type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler navbar-toggler-right" style="color:white"><i class="fa fa-bars"></i></button>
+            
+            <div id="navbarSupportedContent" class="collapse navbar-collapse">
+                <ul class="navbar-nav ml-auto" style="color:white">
+                    <li class="nav-item active"><a href="#" class="nav-link text-uppercase font-weight-bold " style="color:white">Home <span class="sr-only">(current)</span></a></li>
+                    <li class="nav-item"><a href="media.html" class="nav-link text-uppercase font-weight-bold" style="color:white">Media</a></li>
+                    <li class="nav-item"><a href="precautions.html" class="nav-link text-uppercase font-weight-bold" style="color:white">Protect Yourself</a></li>
+                    <li class="nav-item"><a href="helpline.html" class="nav-link text-uppercase font-weight-bold" style="color:white">Helpline</a></li>
+                   <li class="nav-item"><a href="about.html" class="nav-link text-uppercase font-weight-bold" style="color:white">About</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header> 
+
+<div class="container-fluid" style="padding-bottom: 10px;padding-top: 10px;">
+      <div class="card-deck">
+          <div class="card ">
+            <div class="card-body text-center" style="padding: 0px">
+              <div id="piechart_3d">
+              </div>
+            </div>
+          </div>
+          <div class="card ">
+            <div class="card-body text-center">
+              <div  class="card-deck">
+      		        	<div class="card" style="background-color:#3366cc">
+      				      <div class="card-body text-center" style="padding: 0px">
+      				         <p class="card-text text-white" ><u><b>Confirmed</b></u></p>
+      				         <p class="card-text text-white" id="confirm"><strong>000</strong></p>
+      				      </div>
+      				    </div>
+      				    <div class="card "style="background-color:#dc3912">
+      				      <div class="card-body text-center" style="padding: 0px">
+      				         <p class="card-text text-white"><strong><u>Active</u></strong></p>
+      				         <p class="card-text text-white" id="active"><strong>000</strong></p>
+      				      </div>
+      				    </div>
+      				    <div class="card bg-primary ">
+      				      <div class="card-body text-center" style="padding: 0px">
+      				         <p class="card-text text-white"><strong><u>Recovered</u></strong></p>
+      				         <p class="card-text text-white" id="recovered"><strong>000</strong></p>
+      				      </div>
+      				    </div>
+      				    <div class="card" style="background-color:#ff9900" >
+      				      <div class="card-body text-center" style="padding: 0px">
+      				         <p class="card-text text-white"><u><strong>Death</strong></u></p>
+      				         <p class="card-text text-white" id="death"><strong>000</strong></p>
+      				      </div>
+      				    </div>
+      		        	
+      		    </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="container-fluid" style="width: 100%;padding-bottom: 10px">
+ <select name="state" id="state_data" style="width:100%;" onchange="changestate(this)">
+   <option value="India">India</option>
+  </select>
+</div>
+
+<div class=container-fluid style="margin-bottom: 10px;">
+  <div class="card-deck">
+      <div class="card bg-white">
+        <div class="card-body text-center"  style="padding: 0px">
+          <div id="linechart_material">
+          </div>
+        </div>
+      </div>
+      <div class="card bg-white">
+        <div class="card-body text-center" style="padding: 0px">
+          <div id="recovered_bar">
+          </div>
+        </div>
+      </div>
+      <div class="card bg-white">
+        <div class="card-body text-center" style="padding: 0px">
+           <div id="death_bar">
+          </div>
+        </div>     
+      </div>
+  </div>
+</div>
+<!-- <div id="linechart_material" style="height: 370px; width: 100%;"></div> -->
+
+
+
+<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+
+		<!---->
+<!--table for countries data-->
+		<table class="table table-hover table-responsive-sm " >
+  		<thead class="thead-dark">
+        <tr>			
+          <th scope="col">State</th>
+          <th scope="col">Confirm</th>
+          <th scope="col">Active</th>
+          <th scope="col">Recovered</th>
+          <th scope="col">Death</th>
+  			</tr>
+      </thead>
+      <tbody id="state-table">
+    		<tr >
+
+        </tr>
+      </tbody>
+    </table>
+	
+
+
+
+
+<div class="container-fluid text-center text-white" style="background-color: #3366cc">
+  <p>Made by- Pawan Gupta</p>
+  <p>
+      <a href="https://www.linkedin.com/in/pawangupta2187" style="color: black;" class="fab fa-linkedin"></a>
+      &nbsp;&nbsp;&nbsp;
+      <a href="https://github.com/pawangupta2187" style="color: black;" class="fab fa-github"></a>
+  </p>
+</div>
+
+<div id="popup1" class="overlay">
+    <div class="popup">
+        <h2>Tips of the Day</h2>
+        <a class="close" href="#">&times;</a>
+        <div class="content">
+            Wash your hands often with soap and water for at least 20 seconds
+        </div>
+    </div>
+</div>
+
+</body>
+
+</html>
+
+
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+	
+var active;
+var death;
+var recovered;
+var requestOptions = {
+  method: 'GET',
+  redirect: 'follow'
+};
+
+fetch("https://api.covidindiatracker.com/total.json", requestOptions)
+  .then(response => response.text())
+  .then(result => 
+  	{
+  		var obj=JSON.parse(result)
+  		//console.log(JSON.parse(result));
+  		//alert(obj.confirmed);
+  		active=obj.active;
+  		death = obj.deaths;
+  		recovered=obj.recovered;
+  		document.getElementById("confirm").innerHTML=obj.confirmed;
+  		document.getElementById("active").innerHTML=obj.active;
+  		document.getElementById("death").innerHTML=obj.deaths;
+  		document.getElementById("recovered").innerHTML=obj.recovered;
+
+
+
+
+  	})
+  .catch(error => console.log('error', error));
+
+
+//fetch state data
+fetch("https://api.covidindiatracker.com/state_data.json", requestOptions)
+  .then(response => response.text())
+  .then(result =>
+  {
+  	var obj=JSON.parse(result);
+  	console.log(obj[0]['state']);
+  	for(var st in obj)
+  	{
+  				if(obj[st]['state']!='Unknown*')
+  				{//console.log(obj[st]['state']);
+  				 
+  				//data updat for dropdown
+  				 var ddl = document.getElementById("state_data");
+			       var option = document.createElement("OPTION");
+			       option.innerHTML = obj[st]['state'];
+			       option.value = obj[st]['state'];
+			       //option.disabled=true;
+			       ddl.options.add(option);
+
+			    //data for table
+
+	  		var table = document.getElementById("state-table");
+	 		var row = table.insertRow(st);
+	 		
+	 		var cell1 = row.insertCell(0);
+	 		var cell2 = row.insertCell(1);
+	  		var cell3 = row.insertCell(2);
+	  		var cell4 = row.insertCell(3);
+	  		var cell5 = row.insertCell(4);
+	  		
+	 		cell1.innerHTML = obj[st]['state'];
+	  		cell2.innerHTML = obj[st]['confirmed'];
+	  		cell3.innerHTML = obj[st]['active'];
+	  		cell4.innerHTML = obj[st]['recovered'];
+	  		cell5.innerHTML = obj[st]['deaths'];
+	  	}
+  	}
+  	console.log(JSON.parse(result));
+
+  	//console.log(resul
+  })
+  .catch(error => console.log('error', error));
+
+
+
+google.charts.load("current", {packages:["corechart"]});
+      google.charts.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Task', 'Total Cases'],
+          ['active',    active],
+          ['recovered',   recovered],
+          ['death',  death]
+         
+        ]);
+
+        var options = {
+          title: 'Total Cases In India',
+          is3D: true,
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('piechart_3d'));
+        chart.draw(data, options);
+    
+
+      }
+          $(window).resize(function(){
+  chart.drawChart();
+});
+
+
+</script>
+
+
+<script type="text/javascript">
+    	
+    	var requestOptions = {
+  		method: 'GET',
+  		redirect: 'follow'
+				};
+
+// var d = new Date(); 
+// console.log(d.getDate());
+// console.log(d.getMonth());
+// var date=d.getDate()-15;
+// var month=d.getMonth()+1;
+// if(date<0)
+// {
+// 	date=30+date;
+// 	month--;
+
+// }
+
+
+
+//var dateindex=month.toString()+'/'+date.toString()+'/'+'20';
+//console.log(dateindex);
+
+
+
+let arr=[];
+let recovearr=[];
+let deatharr=[];
+
+fetch("https://api.covid19india.org/data.json", requestOptions)
+  .then(response => response.text())
+  .then(result => 
+  	{	var obj=JSON.parse(result);
+  		
+  	
+  		//console.log(obj['cases_time_series'][119]);
+  		var len=obj['cases_time_series'].length;
+  		for(var i=15;i>0;i--)
+  			{//dateindex=month.toString()+'/'+date.toString()+'/'+'20';
+  				console.log(obj['cases_time_series'][len-i].date);
+  				arr.push({"Date":obj['cases_time_series'][len-i].date,"cases":parseInt(obj['cases_time_series'][len-i].dailyconfirmed)});
+  			recovearr.push({"Date":obj['cases_time_series'][len-i].date,"cases":parseInt(obj['cases_time_series'][len-i].dailyrecovered)});
+  			deatharr.push({"Date":obj['cases_time_series'][len-i].date,"cases":parseInt(obj['cases_time_series'][len-i].dailydeceased)});
+
+
+
+  			}
+  			  				console.log(arr.length);
+  		  		drawChart1();
+  		drawChart2();
+  		drawChart3();
+  		
+  		  	})
+    .catch(error => console.log('error', error));
+//console.log(" value in array "+arr.length);
+
+
+
+
+
+
+
+//change data for state
+
+	function changestate(str)
+	{
+		
+		 var strText = str.options[str.selectedIndex].innerHTML;
+     console.log("change data called= ",strText);
+       // var selectedValue = ddlFruits.value;
+arr=[];
+recovearr=[];
+deatharr=[];
+var find=false;
+	fetch("https://api.rootnet.in/covid19-in/stats/history", requestOptions)
+  .then(response => response.text())
+  .then(result =>
+  {
+  	var obj=JSON.parse(result);
+  	var len=obj['data'].length
+  	for(var i=15;i>0;i--)
+  			{
+  					if(strText=='India')
+  					{find=true;
+  							arr.push( {
+	  								"Date":obj['data'][len-i]['day'] , 
+	  								"cases":Math.abs(obj['data'][len-(i+1)]['summary']['total']-obj['data'][len-i]['summary']['total'] ) } );
+	  							recovearr.push( {
+	  								"Date":obj['data'][len-i]['day'] ,
+	  								"cases":Math.abs(obj['data'][len-(i+1)]['summary']['discharged']-obj['data'][len-i]['summary']['discharged']) });
+	  							deatharr.push( { 
+	  								"Date":obj['data'][len-i]['day'] , 
+	  								"cases":Math.abs(obj['data'][len-(i+1)]['summary']['deaths']-obj['data'][len-i]['summary']['deaths']) } );
+
+
+  							continue;	
+  					}
+  				 console.log(obj['data'][len-i]['day']);
+  				// console.log(obj['data'][len-i]['summary']['total']);
+  				// console.log(obj['data'][len-i]['summary']['discharged']);
+  				// console.log(obj['data'][len-i]['summary']['deaths']);
+  				// console.log(obj['data'][len-i]['regional']);
+	  				for(j=0;j<obj['data'][len-i]['regional'].length;j++)
+	  				{
+	  					if(obj['data'][len-i]['regional'][j]['loc']==strText)
+	  						{find=true;
+	  							arr.push( {
+	  								"Date":obj['data'][len-i]['day'] , 
+	  								"cases":Math.abs(obj['data'][len-(i+1)]['regional'][j]['totalConfirmed']-obj['data'][len-i]['regional'][j]['totalConfirmed']) } );
+	  							recovearr.push( {
+	  								"Date":obj['data'][len-i]['day'] ,
+	  								"cases":Math.abs(obj['data'][len-(i+1)]['regional'][j]['discharged']-obj['data'][len-i]['regional'][j]['discharged']) });
+	  							deatharr.push( { 
+	  								"Date":obj['data'][len-i]['day'] , 
+	  								"cases":Math.abs(obj['data'][len-(i+1)]['regional'][j]['deaths']-obj['data'][len-i]['regional'][j]['deaths']) } );
+
+	  							console.log(Math.abs(obj['data'][len-(i+1)]['regional'][j]['totalConfirmed']-obj['data'][len-i]['regional'][j]['totalConfirmed']));
+	  							}
+	  				//console.log(obj['data'][len-i]['regional']);
+	  					}
+  			}
+        if(find==false)
+  	     alert("NO Case Found Till Yet");
+       else
+       {
+  	     drawChart1();
+  	     drawChart2();
+  	     drawChart3();
+       }
+
+  	//console.log(JSON.parse(result));
+
+  	//console.log(resul
+  })
+  .catch(error => console.log('error', error));
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//bar graph for cases
+    	google.load("visualization", "1", {packages:["corechart"]});
+google.setOnLoadCallback(drawChart1);
+function drawChart1() {
+  var data = google.visualization.arrayToDataTable([
+    ['Day', 'Cases'],
+    [arr[0].Date, arr[0].cases],
+    [arr[1].Date, arr[1].cases],
+    [arr[2].Date, arr[2].cases],
+    [arr[3].Date, arr[3].cases],
+    [arr[4].Date, arr[4].cases],
+    [arr[5].Date, arr[5].cases],
+    [arr[6].Date, arr[6].cases],
+    [arr[7].Date, arr[7].cases],
+    [arr[8].Date, arr[8].cases],
+    [arr[9].Date, arr[9].cases],
+    [arr[10].Date, arr[10].cases],
+    [arr[11].Date, arr[11].cases],
+    [arr[12].Date, arr[12].cases],
+    [arr[13].Date, arr[13].cases],
+    [arr[14].Date, arr[14].cases]
+  ]);
+
+  var options = {
+    title: 'Cases',
+    hAxis: {title: 'Day', titleTextStyle: {color: 'black'}},
+
+     };
+
+var chart = new google.visualization.ColumnChart(document.getElementById('linechart_material'));
+  chart.draw(data, options);
+}
+
+$(window).resize(function(){
+  drawChart1();
+  });
+
+
+
+//bar graph for recoverd
+    	google.load("visualization", "1", {packages:["corechart"]});
+google.setOnLoadCallback(drawChart2);
+function drawChart2() {
+  var data2 = google.visualization.arrayToDataTable([
+    ['Day', 'Recovered'],
+    [recovearr[0].Date, recovearr[0].cases],
+    [recovearr[1].Date, recovearr[1].cases],
+    [recovearr[2].Date, recovearr[2].cases],
+    [recovearr[3].Date, recovearr[3].cases],
+    [recovearr[4].Date, recovearr[4].cases],
+    [recovearr[5].Date, recovearr[5].cases],
+    [recovearr[6].Date, recovearr[6].cases],
+    [recovearr[7].Date, recovearr[7].cases],
+    [recovearr[8].Date, recovearr[8].cases],
+    [recovearr[9].Date, recovearr[9].cases],
+    [recovearr[10].Date, recovearr[10].cases],
+    [recovearr[11].Date, recovearr[11].cases],
+    [recovearr[12].Date, recovearr[12].cases],
+    [recovearr[13].Date, recovearr[13].cases],
+    [recovearr[14].Date, recovearr[14].cases]
+  ]);
+
+  var options2 = {
+    title: 'Recovered',
+    hAxis: {title: 'Day', titleTextStyle: {color: 'black'}},
+    
+     };
+
+var chart2 = new google.visualization.ColumnChart(document.getElementById('recovered_bar'));
+  chart2.draw(data2, options2);
+}
+
+$(window).resize(function(){
+  drawChart2();
+});
+
+
+
+//bar graph for death
+    	google.load("visualization", "1", {packages:["corechart"]});
+google.setOnLoadCallback(drawChart3);
+function drawChart3() {
+  var data3 = google.visualization.arrayToDataTable([
+    ['Day', 'Deaths'],
+    [deatharr[0].Date, deatharr[0].cases],
+    [deatharr[1].Date, deatharr[1].cases],
+    [deatharr[2].Date, deatharr[2].cases],
+    [deatharr[3].Date, deatharr[3].cases],
+    [deatharr[4].Date, deatharr[4].cases],
+    [deatharr[5].Date, deatharr[5].cases],
+    [deatharr[6].Date, deatharr[6].cases],
+    [deatharr[7].Date, deatharr[7].cases],
+    [deatharr[8].Date, deatharr[8].cases],
+    [deatharr[9].Date, deatharr[9].cases],
+    [deatharr[10].Date, deatharr[10].cases],
+    [deatharr[11].Date, deatharr[11].cases],
+    [deatharr[12].Date, deatharr[12].cases],
+    [deatharr[13].Date, deatharr[13].cases],
+    [deatharr[14].Date, deatharr[14].cases]
+  ]);
+
+  var options3 = {
+    title: 'Deaths',
+    hAxis: {title: 'Day', titleTextStyle: {color: 'black'}},
+    
+     };
+
+var chart3 = new google.visualization.ColumnChart(document.getElementById('death_bar'));
+  chart3.draw(data3, options3);
+}
+
+$(window).resize(function(){
+  drawChart3();
+});
+
+
+    </script>
+
+
+  
+    <script type="text/javascript">
+	window.onload = function(){
+   document.getElementById("bt").click();   
+};    
+
+</script>
+
