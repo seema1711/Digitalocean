@@ -1,18 +1,11 @@
 # Digitalocean
-This is a hackathon by IncubateIND and sponsered by Digital Ocean named Cloud Titans.  
-This repository consists of all the projects under "DeCOVID".
-Project Mentor- Seema Saharan
-[[params.social]]
-    icon = "linkedin"
-    icon_pack = "fa"
-    link = "//linkedin.com/in/seema-saharan-372473167/"
 
- [[params.social]]
-    icon = "github"
-    icon_pack = "fa"
-    link = "//github.com/seema1711"
+requirements to run the project :
+npm install or npm i 
+node app.js
 
- [[params.social]]
-    icon = "twitter"
-    icon_pack = "fa"
-    link = "//twitter.com/SeemaSaharan5"
+
+DigitalOcean Hosted Link IP:- http://139.59.35.195:3000/  (I have just simply made the server not configured the nginx reverse proxy and no custom domain)
+
+
+And Hosted on Heroku as Well :- https://shrouded-spire-07788.herokuapp.com/
