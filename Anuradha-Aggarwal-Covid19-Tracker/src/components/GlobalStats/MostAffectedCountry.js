@@ -18,14 +18,19 @@ const MostAffectedCountry = ({allData}) => {
                 <tr key="heading">
                     <th style={{color:"orange"}}>Country Name</th>
                     <th style={{color:"blue"}}>Total Confirmed</th>
-                    <th style={{color:"red"}}>Total Deaths</th>
                     <th style={{color:"green"}}>Total Recovered</th>
+                    <th style={{color:"red"}}>Total Deaths</th>
+
                 </tr>
                 </thead>
                 <tbody>
                 {listedCountry.map(item => (
                     <tr key={item.Country}>
-                        <td>{item.Country}</td><td>{item.TotalConfirmed}</td><td>{item.TotalDeaths}</td><td>{item.TotalRecovered}</td>
+                        <td>{item.Country}</td>
+                        <td>{item.TotalConfirmed}</td>
+                        <td>{item.TotalRecovered}</td>
+                        <td>{item.TotalDeaths}</td>
+
                     </tr>
                 ))}
                 </tbody>

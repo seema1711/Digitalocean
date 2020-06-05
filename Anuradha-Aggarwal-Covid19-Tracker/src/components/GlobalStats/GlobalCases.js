@@ -40,7 +40,7 @@ const Global = ({ data }) => {
                     <div className='lesson-container col-md-6'>
 
                         <h3>Global Cases</h3>
-        <p>(Last Updated On: {data.Date.slice(0,10)} {data.Date.slice(11,19)})</p>
+                        <p>(Last Updated On: {data.Date.slice(0,10)} {data.Date.slice(11,19)})</p>
 
                         <div className="row">
                             {Object.entries(data.Global).map(item => (
@@ -67,7 +67,11 @@ const Global = ({ data }) => {
             </div>
         )
     }
-    else return <h3>Loading...</h3>
+    else return (
+        <div>
+        <h3>Loading...</h3>
+        <p>Please Refresh the page...</p>
+    </div>)
 }
 
 export default Global;

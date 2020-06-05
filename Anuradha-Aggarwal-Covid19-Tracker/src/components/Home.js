@@ -6,6 +6,10 @@ import img3 from '../images/10.jpg';
 import img4 from '../images/11.jpg';
 import img5 from '../images/2.jpg';
 import symptoms from '../images/symptoms.png';
+import ReactPlayer from "react-player";
+
+
+
 
 
 const Home = () => {
@@ -101,7 +105,14 @@ const Home = () => {
 
             <div className="App outerDiv">
                 <h3>For More Details:</h3>
-                <a href="https://www.mygov.in/covid-19/" className="App-link">VISIT US:</a> <br />
+                <a href="https://www.mygov.in/covid-19/" className="App-link">VISIT US:</a> <br /><br/>
+                <div className="row home">
+                    <div className="col-md-4"><ReactPlayer url="https://www.youtube.com/watch?v=7z0kzYpuqhw" height="" width="auto"/></div>
+                    <div className="col-md-4"><ReactPlayer url="https://www.youtube.com/watch?v=U8r3oTVMtQ0" height="auto" width="auto"/></div>
+                    <div className="col-md-4"><ReactPlayer url="https://youtu.be/8c_UJwLq8PI" height="auto" width="auto"/></div>
+
+                </div>
+                <br/><br />
                 <img src={img5} alt="img5" className="img-center"  />
 
             </div>

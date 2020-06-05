@@ -27,6 +27,8 @@ const Header = (props) => {
             <NavItem> <NavLink href="/global">Global</NavLink> </NavItem>
             <NavItem> <NavLink href="/india">India</NavLink> </NavItem>
             <NavItem> <NavLink href="/about">About Covid19</NavLink> </NavItem>
+            <NavItem> <NavLink href="/map">Analytics</NavLink> </NavItem>
+
           </Nav>
         </Collapse>
       </Navbar>

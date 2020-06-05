@@ -33,10 +33,10 @@ const IndianStats = () => {
                 <h3>COVID-19 India Status</h3>
                 <p>[Last Updated On: {indianData.statewise[0].lastupdatedtime}]</p>
                 <div className="row">
-                    <Display name="Active" number={Number(indianData.statewise[0].active)} color="warning" />
-                    <Display name="Total Confirmed" number={Number(indianData.statewise[0].confirmed)} color="info" />
-                    <Display name="Total Deaths" number={Number(indianData.statewise[0].deaths)} color="danger" />
-                    <Display name="Total Recovered" number={Number(indianData.statewise[0].recovered)} color="success" />
+                    <Display name="Total Confirmed" number={Number(indianData.statewise[0].confirmed)} color="info" font="white" />
+                    <Display name="Total Active" number={Number(indianData.statewise[0].active)} color="warning" font="white"  />
+                    <Display name="Total Recovered" number={Number(indianData.statewise[0].recovered)} color="success" font="white"  />
+                    <Display name="Total Deaths" number={Number(indianData.statewise[0].deaths)} color="danger" font="white"  />
                 </div>
 
                 <Chart data={indianData.cases_time_series} />
