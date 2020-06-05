@@ -3,7 +3,7 @@ cov19app.config(function($stateProvider)
                             $stateProvider.caseInsensitiveMatch=true;
                             $stateProvider
                              .state('home',{
-                              url:'/',
+                              url:'',
                               templateUrl:'home.html',
                               controller:'homeCont'
                             })
@@ -12,13 +12,6 @@ cov19app.config(function($stateProvider)
                               url:'/about',
                               templateUrl:'about.html'
                               
-                          })
-                         $stateProvider
-                             .state('precautions',{
-                              url:'/precautions',
-                              templateUrl:'precautions.html',
-                              controller:'precautionsCont'
-                               
                           })
                          $stateProvider
                              .state('india',{
