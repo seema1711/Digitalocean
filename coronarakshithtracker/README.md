@@ -9,6 +9,6 @@ WHEN YOU CLICK ON WATCH VIDEO YOU WILL SEE A INFORMATIVE VIDEO ON COVID-19 RELEA
 LEARN MORE ON COVID-19 SHOWS INFORMATION BY UNITED NATIONS ON COVID-19.
 
               "TO STAY SAFE IS TO SAVE LIVES!"- HELENE MUNSON.
-  
-Digitalocean IP 134.209.149.60
+              
+              
 This was my first attempt, and I hope you like it.
