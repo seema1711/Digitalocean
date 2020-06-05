@@ -5,4 +5,4 @@ Features:
 - Real time data on the world map as well
 - Display Country-wise cases on maps
 
-[Live Demo]()
+[Live Demo](https://theleancoder-covid19app.netlify.app/)
