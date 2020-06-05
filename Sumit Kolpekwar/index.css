@@ -1,0 +1,137 @@
+body,
+html {
+  margin: 0;
+  padding: 0;
+  overflow-x: auto;
+  background-color: transparent !important;
+}
+
+.has-text-danger {
+  color: #ff073a !important;
+}
+.has-text-warning {
+  color: #007bff !important;
+}
+
+.has-text-success {
+  color: #28a745 !important;
+}
+.section .container h1,
+.section .container h2 {
+  color: #000 !important;
+}
+.section .container h2 strong {
+  color: #ff073a !important;
+}
+
+nav {
+  /* background-color: #000000 !important; */
+  color: #000000 !important;
+  font-weight: bold;
+}
+nav a {
+  color: #000 !important;
+}
+
+/* nav a:hover {
+  color: #ff073a !important;
+} */
+
+.navbar-end a {
+  color: white !important
+;
+}
+article:hover {
+  background-color: #f5f5f5;
+  /* box-shadow: 1px 8px 20px grey; */
+  -webkit-transition: box-shadow 0.1s ease-in;
+}
+
+.box {
+  padding: 4rem !important;
+  /* background-color: #F5F5F5; */
+  box-shadow: none !important;
+}
+.box p {
+  color: #000;
+}
+
+table th,
+table tbody td {
+  color: #000 !important;
+}
+
+table {
+  width: 100% !important;
+  overflow-x: auto;
+}
+
+tbody tr:hover {
+  background-color: #f5f5f5;
+  color: #000 !important;
+  font-weight: bold;
+  box-shadow: 1px 4px 10px grey;
+  -webkit-transition: box-shadow 0.1s ease-in;
+}
+
+tbody tr th:hover,
+tr td:hover {
+  color: #000 !important;
+  font-weight: bold;
+}
+
+.tile.table {
+  max-height: 50rem;
+}
+
+.box.hereMap {
+  width: 100%;
+  height: 50rem;
+  padding: 0rem !important;
+}
+
+.button.is-danger.is-rounded a {
+  text-decoration: none;
+  color: white !important;
+}
+
+#india .tile.table {
+  max-height: max-content !important;
+}
+
+.flourish-map {
+  height: 50vh;
+  width: 100%;
+  padding-top: 4rem;
+}
+
+#table_wrapper {
+  padding-left: 0rem !important;
+  padding-right: 0rem !important;
+  overflow-x: auto;
+}
+#india .is-vertical.is-parent {
+  max-height: max-content !important;
+}
+
+thead th {
+  position: sticky !important;
+  position: -webkit-sticky !important;
+  top: 0 !important;
+  z-index: 999 !important;
+  color: #ffffff !important;
+  background-color: black;
+}
+
+table.tile.table.is-fullwidth.is-child.box.has-text-centered {
+  padding-top: 0px !important;
+}
+
+footer.footer strong {
+  color: white;
+}
+
+footer.footer {
+  background-color: black;
+  color: white;
+}
