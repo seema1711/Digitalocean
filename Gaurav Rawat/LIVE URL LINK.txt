@@ -1,8 +1,0 @@
-SITE URL
-https://covid19indiastats.netlify.app/
-
-Github URL
-https://github.com/gauravrawat97
-
-Few Notes: In case a page is not loaded properly please refresh sometimes chart doesn't show dates properly.
-
