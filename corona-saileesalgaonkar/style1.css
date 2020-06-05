@@ -1,0 +1,445 @@
+*{
+	line-height: 1.8;
+	
+	margin:0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'ABeeZee', sans-serif;
+}
+body{
+	width: 100vw;
+	background: #aab7ea;
+    background: #eaebec;
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    overflow-x: hidden;
+
+}
+header{
+	width: 100vw;
+	height: 100%;
+	border-radius:0 0 15px 15px;
+    background: #eaebec;
+    box-shadow:  7px 7px 14px #b9baba, 
+             -7px -7px 14px #ffffff;
+}
+#nav-links{
+	float: right;
+	position: relative;
+	
+}
+#logo{
+	float:left;
+
+}
+#nav-links ul{
+	display: flex;
+	right: 5%;
+
+	position: relative;
+
+}
+#nav-links ul li{
+	padding:10px 15px;
+	list-style: none;
+
+	font-size: 1em;
+}
+#nav-links ul li a{
+	color: black;
+	padding:5px;
+ 	cursor: pointer;
+ 	text-decoration: none;
+
+}
+#nav-links ul li a:hover, #nav-links ul li a:active{
+	background: white;
+	cursor: pointer;
+    text-decoration: none;
+    border-radius: 5px;
+background: #ebebeb;
+box-shadow:  7px 7px 14px #cccccc, 
+             -7px -7px 14px #ffffff;
+}
+#clearfix{
+	clear: both;
+}
+#home{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+#news{
+	display: flex;
+	flex-direction: column;
+	padding: 10px;
+	margin-top: 40px;
+	width: 80vw;
+	 border-radius: 5px;
+background: #ebebeb;
+box-shadow:  7px 7px 14px #cccccc, 
+             -7px -7px 14px #ffffff;
+
+}
+.red{
+	color: red;
+	font-style: italic;
+	font-weight: 600;
+}
+
+.blink{
+	animation: blinking 0.5s linear infinite;
+}
+#newssection{
+	display: none;
+}
+#newssection.active{
+	position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 25vh;
+}
+
+#newssection1.active,#newssection2.active,#newssection3.active{
+	position: absolute;
+    display: flex;
+    height: 20vh;
+    width: 90%;
+    margin: 0;
+}
+
+#newssection1,#newssection2,#newssection3{
+	display: none;
+}
+.selectedcircle{
+	color: red;
+}
+@keyframes blinking{
+	0%{
+		color: #fff;
+	}
+	100%{
+		color: red;
+	}
+}
+#activecases{
+	margin-top: 40px;
+	width: 60vw;
+	border-radius: 5px;
+    background: #ebebeb;
+    box-shadow:  7px 7px 14px #cccccc, 
+             -7px -7px 14px #ffffff;
+    padding-top: 10px;
+    padding-bottom: 30px;
+}
+.caseimg{
+	width: 5em;
+	height: 5em;
+	margin: 1em;
+}
+.case{
+	margin-right: 10px;
+	margin-left: 10px;
+	position: relative;
+}
+.casesreport{
+	width: 100%;
+    text-align: center;
+	position: absolute;
+	left: -0.5em;
+	font-weight: 500;
+	font-size: 1em;
+	top: -0.7em;
+	text-shadow: 3px 3px 15px #fff;
+}
+#statestatics{
+	margin-top: 40px;
+	width: 70vw;
+	margin-bottom: 40px;
+}
+#stateswisecases
+{
+	width: 100%;
+	border-radius: 5px;
+    background: #ebebeb;
+    box-shadow:  7px 7px 14px #cccccc, 
+             -7px -7px 14px #ffffff;
+
+
+}
+
+#stateswisecases th,td{
+	padding: 6px;
+	border: 0.5px solid #cccccc; 
+	border-collapse: collapse; 
+
+}
+#stateswisecases th{
+	background: #cecbcb;
+    letter-spacing: 0.1em;
+}
+#stateswisecases tr td:nth-child(2){
+	background: #e0aadc;
+}
+#stateswisecases tr td:nth-child(3){
+	background: #b3b3f5;
+}
+#stateswisecases tr td:nth-child(4){
+	background: #a5d4b8;
+}
+#stateswisecases tr td:nth-child(5){
+	background: #dea9a9;
+}
+.selectplace{
+	padding: 10px 20px;    
+    border: 0px;
+    margin-right: 20px;
+    outline: none;
+    max-width: 30%;
+    width: 30%;
+    border-radius: 5px;
+    background-image: linear-gradient(-90deg,#ebebeb,#f1f1f1);
+    box-shadow: 7px 7px 14px #cccccc, 
+             -7px -7px 14px #ffffff, inset 5px 5px 10px #e3e4e4, inset -5px -5px 10px #e8e8e8;
+
+
+}
+
+
+#statesinformation{
+	margin-bottom: 40px;
+	width: 60vw;
+	border-radius: 5px;
+    background: #ebebeb;
+    box-shadow:  7px 7px 14px #cccccc, 
+             -7px -7px 14px #ffffff;
+    padding:20px;
+
+
+}
+#showdistrictinfo{
+	border-radius: 50%;
+	background-image: linear-gradient(-90deg,#ebebeb,#f1f1f1);
+    box-shadow: 7px 7px 14px #cccccc, 
+             -7px -7px 14px #ffffff, inset 5px 5px 10px #e3e4e4, inset -5px -5px 10px #e8e8e8;
+    padding: 5px;
+    border: 0px;
+    width: 36px;
+    height: 36px;
+    outline: none;
+    cursor: pointer;
+
+
+
+}
+.selectplace:hover,#showdistrictinfo:hover{
+	background-image: linear-gradient(-90deg,#f1f1f1,#ffffff);
+    box-shadow: 7px 7px 14px #cccccc, 
+             -7px -7px 14px #ffffff, inset 3px 3px 7px #e3e4e4, inset -3px -3px 7px #e8e8e8;
+    
+}
+#staticsdistrict{
+	width: 100%;
+	height: 100%;
+	padding: 0;
+}
+#inputstateinformation{
+	width: 100%;
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
+}
+#chartdiv{
+    width: 100%;
+    height: 400px;
+    display: none;
+    margin-top: 40px
+}
+#staticsdistrict.active{
+	display: block;
+}
+.newsitems{
+	position: relative;
+    font-size: 1em;
+    width: 33.33%;
+    height: 80%;
+    display: flex;
+    align-items: center;
+    margin: 10px;
+    padding: 0 0.5%;
+    border-radius: 5px;
+    background: #ebebeb;
+    box-shadow: 7px 7px 14px #cccccc, -7px -7px 14px #ffffff;
+    flex-direction: column;
+
+}
+.newsitems img{
+position: relative;
+    height: 30%;
+    width: 30%;
+    margin-bottom: 3%;
+}
+#viewsections{
+	display: none;
+}
+#viewsections.active{
+	display: block;
+}
+.circle{
+	font-size: 25px;
+	padding:0 10px;
+	cursor: pointer;
+
+}
+
+@media all and (max-width: 800px)
+{
+	.newsitems img {
+    position: relative;
+    height: 50px;
+    width: 50px;
+    margin-bottom: 3%;
+    }
+	.newsitems{
+
+    text-align: left;
+    position: relative;
+    font-size: 0.75em;
+    width: 33.33%;
+    height: 90%;
+    display: flex;
+    align-items: center;
+    margin: 10px;
+    padding: 0 0.5%;
+    border-radius: 5px;
+    background: #ebebeb;
+    box-shadow: 7px 7px 14px #cccccc, -7px -7px 14px #ffffff;
+    flex-direction: column;
+	}
+	#newssection1.active, #newssection2.active, #newssection3.active {
+    position: absolute;
+    display: flex;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+}
+    #news{
+    	width: 90vw;
+    }
+	.toggle{
+		position: absolute;
+		cursor: pointer;
+		
+        opacity: 1;
+        
+        margin-left: 20px;
+        color: rgb(81,112,84);
+        font-size: 20px;
+        z-index: 99;
+        transition: all .5s linear;
+        }
+
+    .toggle:before{
+    	content: '\f0c9';
+		font-family:fontAwesome;
+	    display: block;	
+       
+    }
+    .toggle.active:before{
+    	content: '\f00d';
+		font-family:fontAwesome;
+	    display: block;	
+     
+    }
+	#nav-links.active ul{
+		display: block;
+        margin-left: 0%;
+        padding: 2% 5%;
+        width: 100%;
+
+        transition: all .2s linear; 
+    }
+	#nav-links.active ul li{
+	    width: 100%;
+		display: block;
+     
+    }
+    #nav-links.active ul li a{
+		color: black;
+		font-size: 1em;
+        text-align: center;
+    }
+    #nav-links.active ul li a:active,
+    #nav-links.active ul li a:hover{
+	    background: white;
+		cursor: pointer;
+	    text-decoration: none;
+	    border-radius: 5px;
+		background: #ebebeb;
+		box-shadow:  7px 7px 14px #cccccc, 
+	             -7px -7px 14px #ffffff;
+
+	  
+    }
+    #newssection.active{
+	position: relative;
+    display: block;
+    height: 35vh;
+    font-size: 14px;
+    padding:0 5px;
+    }
+    #nav-links{
+    	float: left;
+    	width: 100%;
+    	padding:20px 10px;
+        }
+	#nav-links ul li{
+		display: none;
+	}
+
+    
+	.selectplace{
+		padding: 5px;
+        font-size: 14px;
+        max-width: 38%;
+        margin-right: 5px;
+	}
+	#showdistrictinfo{
+		float: right;
+	}
+	#statesinformation{
+		width: 90vw;
+		padding:20px 10px;
+
+	}
+    #activecases{
+    	width: 85vw;
+    }
+	#statestatics{
+		width: 90%;
+	}
+	#stateswisecases{
+			width: 100%;
+		    position: relative;
+		    border-color: white;
+		    border-spacing: 0;
+	}
+	#stateswisecases th, td{
+			width: 25%;
+		    border-spacing: 0;
+		    padding: 3px;
+		    letter-spacing: normal;
+		    font-weight: 300;
+		    font-size: 0.7em;
+		    margin: 0;
+		  
+	}
+	.selectplace{
+	padding: 10px;  
+    }
+}
