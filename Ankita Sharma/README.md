@@ -1,0 +1,1 @@
+COVID-19 tracker web app using html5,css3,bootstrap4 and angularjs.
